@@ -75,16 +75,12 @@
         </div>
 
         <div class="expansive-tasks">
-          <!-- <div class="expansion-container">
-            <div class="expansion-title">
-              <div class="title-content">
-                <p class="">Accept Partner Nomination</p>
-                <span class="expansion-sub-tilte">UHNCR</span>
-              </div>
-              <i class="mdi mdi-chevron-down icon"></i>
-            </div>
-
-            <div class="expansion-section">
+          <ExpandableList>
+            <template v-slot:header>
+              <p class="">Accept Partner Nomination</p>
+              <span class="expansion-sub-tilte">UHNCR</span>
+            </template>
+            <template v-slot:expanded-content>
               <div class="expansion-content">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum
@@ -107,9 +103,15 @@
 
                 <button>View Nomination</button>
               </div>
-            </div>
-          </div> -->
-          <ExpandableList />
+            </template>
+          </ExpandableList>
+
+          <ExpandableList>
+            <template v-slot:header>
+              <p class="">Submit Mission Scope</p>
+              <span class="expansion-sub-tilte">UHNCR</span>
+            </template>
+          </ExpandableList>
         </div>
       </v-col>
     </v-row>

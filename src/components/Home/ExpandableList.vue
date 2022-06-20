@@ -2,8 +2,7 @@
   <div class="expansion-container">
     <div class="expansion-title">
       <div class="title-content">
-        <p class="">Accept Partner Nomination</p>
-        <span class="expansion-sub-tilte">UHNCR</span>
+        <slot name="header"></slot>
       </div>
       <i
         :class="`mdi mdi-chevron-${showMore ? `up` : `down`} icon`"
@@ -13,28 +12,7 @@
     </div>
 
     <div class="expansion-section" v-show="showMore">
-      <div class="expansion-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum praesentium
-          voluptatem ut culpa! Dolores libero quasi eius tenetur itaque
-        </p>
-        <div class="dates">
-          <div class="date">
-            <p>
-              <v-icon size="16" color="#e1e1e1">mdi-calendar-range</v-icon> Created:
-              <span class="">3 April, 2021</span>
-            </p>
-          </div>
-          <div class="date">
-            <p>
-              <v-icon size="16" color="#e1e1e1">mdi-calendar-check</v-icon> Created:
-              <span class="">3 April, 2021</span>
-            </p>
-          </div>
-        </div>
-
-        <button>View Nomination</button>
-      </div>
+      <slot name="expanded-content"></slot>
     </div>
   </div>
 </template>
@@ -60,6 +38,7 @@ export default {
 .expansion-container {
   background-color: white;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .expansion-title {
