@@ -9,7 +9,7 @@
     <v-app-bar app elevation="0" color="bgPrimary" height="80px">
       <v-container fluid>
         <v-row>
-          <v-col cols="7" class="navbarr">
+          <v-col cols="12" md="7" class="navbarr">
             <v-tabs background-color="bgPrimary">
               <v-tab exact-active-class="active" :to="{ name: 'my-updates' }" exact-path
                 >my updates
@@ -132,5 +132,12 @@ html {
   position: absolute;
   left: 5px;
   top: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .search-container {
+    visibility: hidden;
+    display: none;
+  }
 }
 </style>

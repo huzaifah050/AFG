@@ -4,8 +4,11 @@
 
     <div class="content">
       <div class="title-container">
-        <h4>Mission Sankofa_NG_004</h4>
-        <span>Mission Partner</span>
+        <div class="">
+          <h4>Mission Sankofa_NG_004</h4>
+          <span>Mission Partner</span>
+        </div>
+
         <v-spacer />
         <i class="mdi mdi-dots-horizontal"></i>
       </div>
@@ -192,6 +195,11 @@ export default {
   width: 100%;
 }
 
+.title-container > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .title-container span {
   font-size: 0.875rem;
   color: var(--var-light-text);
@@ -270,5 +278,32 @@ export default {
   padding: 8px 12px;
   border-radius: 10px;
   border: 1px solid var(--var-gray-border);
+}
+
+@media screen and (max-width: 600px) {
+  .title-container {
+    display: flex;
+  }
+
+  .title-container > div {
+    display: block;
+  }
+  .dates {
+    flex-direction: column;
+    gap: 1px;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+  }
+
+  .chips-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
 }
 </style>

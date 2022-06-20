@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col cols="7">
+      <v-col cols="12" md="7">
         <router-view></router-view>
       </v-col>
       <v-col cols="5" class="detailContainer">
@@ -423,5 +423,12 @@ export default {
   color: white;
   height: 40px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .detailContainer {
+    visibility: hidden;
+    display: none;
+  }
 }
 </style>

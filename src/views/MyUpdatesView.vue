@@ -4,7 +4,7 @@
       <h3>Outstanding Appraisals</h3>
       <v-row class="content">
         <!-- the scrollbar container -->
-        <v-col cols="11">
+        <v-col cols="10" md="11">
           <v-row>
             <div class="scrollable-container">
               <div class="scrollable-content" v-for="user in users" :key="user.id">
@@ -31,7 +31,7 @@
 
         <!-- the navigation -->
         <v-spacer></v-spacer>
-        <v-col cols="1" class="bggg d-flex align-center">
+        <v-col cols="2" md="1" class="bggg d-flex align-center">
           <div class="navigation-container">
             <v-icon size="40" color="#e1e1e1"> mdi-chevron-right</v-icon>
           </div>
@@ -177,5 +177,11 @@ export default {
   border: 2px solid #e1e1e1;
   padding: 1px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .scrollable-content {
+    width: 95%;
+  }
 }
 </style>
