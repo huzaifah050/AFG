@@ -2,14 +2,19 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for  -->
 <template>
   <v-app>
-    <v-navigation-drawer app>
+    <v-navigation-drawer app id="inspire" v-model="drawer">
       <Sidebar />
     </v-navigation-drawer>
 
     <v-app-bar app elevation="0" color="bgPrimary" height="80px">
       <v-container fluid>
         <v-row>
-          <v-col cols="12" md="7" class="navbarr">
+          <v-col cols="12" md="7" class="navbar-row">
+            <i
+              class="mdi mdi-menu menu-icon"
+              @click="drawer = !drawer"
+              @keydown="drawer = !drawer"
+            ></i>
             <v-tabs background-color="bgPrimary">
               <v-tab exact-active-class="active" :to="{ name: 'my-updates' }" exact-path
                 >my updates
@@ -52,18 +57,11 @@
       </v-container>
     </v-app-bar>
 
-    <!-- Sizes your content based upon application components -->
     <v-main>
-      <!-- Provides the application the proper gutter -->
       <v-container fluid>
-        <!-- If using vue-router -->
         <router-view></router-view>
       </v-container>
     </v-main>
-
-    <v-footer app>
-      <!-- -->
-    </v-footer>
   </v-app>
 </template>
 
@@ -74,9 +72,10 @@ export default {
   name: "App",
   components: {
     Sidebar,
-    // HomeViewVue,
   },
-  data: () => ({}),
+  data: () => ({
+    drawer: null,
+  }),
 };
 </script>
 
@@ -93,7 +92,15 @@ html {
 #app {
   background-color: #eeeeee;
 }
-
+.navbar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
 :root {
   --var-light-text: #8a8686;
   --var-black-text: #0b0101;
@@ -138,6 +145,12 @@ html {
   .search-container {
     visibility: hidden;
     display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .menu-icon {
+    display: none;
+    visibility: hidden;
   }
 }
 </style>

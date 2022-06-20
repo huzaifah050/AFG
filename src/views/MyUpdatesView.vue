@@ -68,7 +68,7 @@ export default {
         name: "John",
         role: "Mission Partner",
         img: "https://cdn.vuetifyjs.com/images/john.jpg",
-        id: 2,
+        id: 3,
       },
     ];
     return {
