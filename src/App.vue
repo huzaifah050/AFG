@@ -1,13 +1,15 @@
+<!-- eslint-disable vuejs-accessibility/form-control-has-label  -->
+<!-- eslint-disable vuejs-accessibility/label-has-for  -->
 <template>
   <v-app>
     <v-navigation-drawer app>
       <Sidebar />
     </v-navigation-drawer>
 
-    <v-app-bar app elevation="0" color="bgPrimary">
+    <v-app-bar app elevation="0" color="bgPrimary" height="80px">
       <v-container fluid>
-        <v-row class="nav-container">
-          <v-col cols="7">
+        <v-row>
+          <v-col cols="7" class="navbarr">
             <v-tabs background-color="bgPrimary">
               <v-tab exact-active-class="active" :to="{ name: 'my-updates' }" exact-path
                 >my updates
@@ -31,22 +33,16 @@
               </v-tab>
             </v-tabs>
           </v-col>
-          <v-col cols="5">
-            <div class="search-container">
-              <v-text-field
-                outlined
-                label="Search roles, projects, tasks and feed"
-                prepend-inner-icon="mdi-magnify"
-                class="search-input ma-0"
-              ></v-text-field>
-              <!-- <v-text-field
-                solo
-                elevation="0"
-                label="Search roles, projects, tasks and feed"
-                prepend-inner-icon="mdi-magnify"
-                class="search-field"
-              ></v-text-field>
-               -->
+          <v-col cols="5" class="search-container">
+            <div class="search-content">
+              <div class="search-input-container">
+                <input
+                  type="text"
+                  placeholder="Search roles, projects, tasks and feed"
+                  class="search-input"
+                />
+                <i class="mdi mdi-magnify input-icon"></i>
+              </div>
               <v-badge color="primary" overlap content="3">
                 <v-icon class="search-icon">mdi-bell-outline</v-icon>
               </v-badge>
@@ -56,11 +52,18 @@
       </v-container>
     </v-app-bar>
 
+    <!-- Sizes your content based upon application components -->
     <v-main>
+      <!-- Provides the application the proper gutter -->
       <v-container fluid>
+        <!-- If using vue-router -->
         <router-view></router-view>
       </v-container>
     </v-main>
+
+    <v-footer app>
+      <!-- -->
+    </v-footer>
   </v-app>
 </template>
 
@@ -102,36 +105,32 @@ html {
 .active {
   color: var(--var-primary-color);
 }
-.nav-container {
-  /* background-color: #eeeeee; */
-  /* background-color: greenyellow; */
-  /* padding-top: 80px; */
-}
 
-/* .search-container {
-  background-color: #19ae46;
-  height: 5.5rem;
-} */
-
-div.v-input__control {
-  flex-wrap: nowrap;
-}
-.search-container {
+.search-content {
+  height: 100%;
   display: flex;
   align-items: center;
-  /* gap: 10px; */
-  background-color: red;
-  /* height: 48px; */
 }
 
-.search-field {
-  /* border-radius: 50%; */
+.search-input-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
+
 .search-input {
-  background-color: greenyellow;
+  background-color: white;
+  border-radius: 10px;
+  width: 95%;
+  height: 100%;
+  padding-left: 50px;
 }
 
-.search-icon {
-  /* background-color: blue; */
+.input-icon {
+  color: var(--var-gray-border);
+  font-size: 30px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 </style>

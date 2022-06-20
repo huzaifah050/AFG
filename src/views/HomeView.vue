@@ -158,10 +158,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  margin-top: 40px;
-}
-
 .user-card {
   background-color: white;
   height: 5.5rem;
